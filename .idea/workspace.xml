@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e98dd2c-ebff-4acf-9182-90d1bccc6808" name="Changes" comment="Started a json example.">
-      <change afterPath="$PROJECT_DIR$/fileFormatExamples/xmlSample1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tipYourServer/randomSelectionOfEvents.py" afterDir="false" />
+    <list default="true" id="1e98dd2c-ebff-4acf-9182-90d1bccc6808" name="Changes" comment="Added tip your server game.">
+      <change afterPath="$PROJECT_DIR$/dataApps/home.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataApps/pages/1_Login.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataApps/pages/2_Tobacco_Market_of_1690.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataApps/utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,7 +30,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="jsonExample" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -77,9 +79,10 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Python.randomSelectionOfEvents.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "jsonExample",
+    "git-widget-placeholder": "streamlitSample1",
     "last_opened_file_path": "C:/Anaconda/Scripts/conda.exe",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -92,8 +95,39 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jerom\PycharmProjects\portfolioOfWork\dataApps" />
       <recent name="C:\Users\jerom\PycharmProjects\portfolioOfWork\file_format_examples" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="randomSelectionOfEvents" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="portfolioOfWork" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tipYourServer" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tipYourServer/randomSelectionOfEvents.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.randomSelectionOfEvents" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -113,7 +147,7 @@
       <updated>1728768452449</updated>
       <workItem from="1728768455089" duration="4923000" />
       <workItem from="1728773529436" duration="1635000" />
-      <workItem from="1728780937777" duration="2840000" />
+      <workItem from="1728780937777" duration="7176000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit. Added yaml sample 1 file.">
       <option name="closed" value="true" />
@@ -155,7 +189,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728783381916</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added tip your server game.">
+      <option name="closed" value="true" />
+      <created>1728784103157</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1728784103157</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,6 +220,10 @@
     <MESSAGE value="Python Interpreter change." />
     <MESSAGE value="Pycharm files." />
     <MESSAGE value="Started a json example." />
-    <option name="LAST_COMMIT_MESSAGE" value="Started a json example." />
+    <MESSAGE value="Added tip your server game." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added tip your server game." />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/portfolioOfWork$randomSelectionOfEvents.coverage" NAME="randomSelectionOfEvents Coverage Results" MODIFIED="1728784005130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tipYourServer" />
   </component>
 </project>
