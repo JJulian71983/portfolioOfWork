@@ -1,0 +1,255 @@
+## THIS IS A YAML SAMPLE FOR DATA BUILD TOOL (DBT) AND SNOWFLAKE ##
+
+## Project
+name: myDBTProject
+version: 0.1
+config-version: 2
+profile: dbt-project
+
+## Sources
+model-paths: [models, sources]
+analysis-paths: [analysis]
+test-paths: [tests]
+seed-paths: [seeds]
+macro-paths: [macros]
+snapshot-paths: [snapshots]
+
+## Target
+target-path: target
+clean-targets: [target, dbt_modules]
+
+
+## Models
+models:
+  myDBTProject:
+    +post-hook:
+      - "{{ my_dbt_macro() }}"
+    +docs:
+      logical_stage: auto
+## Define Objects such as schemas, tables, and tags.
+    datamart_1:
+      +materialized: table
+      +schema: DATAMART_1
+      table_1:
+        +table: TABLE_1
+        +grants:
+          select: [SQL_DEVELOPER, SYSADMIN, SA_GOVERN, TABLEAU]
+          references: [SA_GOVERN]
+          all privileges: [SYSADMIN]
+      table_2:
+        +table: TABLE_2
+        +grants:
+          select: [SQL_DEVELOPER, SYSADMIN, SA_GOVERN, TABLEAU]
+          references: [SA_GOVERN]
+          all privileges: [SYSADMIN]
+      table_3:
+        +table: TABLE_3
+        +grants:
+          select: [SQL_DEVELOPER, SYSADMIN, SA_GOVERN, TABLEAU]
+          references: [SA_GOVERN]
+          all privileges: [SYSADMIN]
+      table_4:
+        +table: TABLE_4
+        +grants:
+          select: [SQL_DEVELOPER, SYSADMIN, SA_GOVERN, TABLEAU]
+          references: [SA_GOVERN]
+          all privileges: [SYSADMIN]
+      table_5:
+        +table: TABLE_5
+        +grants:
+          select: [SQL_DEVELOPER, SYSADMIN, SA_GOVERN, TABLEAU]
+          references: [SA_GOVERN]
+          all privileges: [SYSADMIN]
+    datamart_2:
+      +materialized: table
+      +schema: DATAMART_2
+      table_1:
+        +table: TABLE_1
+        +grants:
+          select: [SQL_DEVELOPER, SYSADMIN, SA_GOVERN, TABLEAU]
+          references: [SA_GOVERN]
+          all privileges: [SYSADMIN]
+      table_2:
+        +table: TABLE_2
+        +grants:
+          select: [SQL_DEVELOPER, SYSADMIN, SA_GOVERN, TABLEAU]
+          references: [SA_GOVERN]
+          all privileges: [SYSADMIN]
+      table_3:
+        +table: TABLE_3
+        +grants:
+          select: [SQL_DEVELOPER, SYSADMIN, SA_GOVERN, TABLEAU]
+          references: [SA_GOVERN]
+          all privileges: [SYSADMIN]
+      table_4:
+        +table: TABLE_4
+        +grants:
+          select: [SQL_DEVELOPER, SYSADMIN, SA_GOVERN, TABLEAU]
+          references: [SA_GOVERN]
+          all privileges: [SYSADMIN]
+    datamart_3:
+      +materialized: table
+      +schema: DATAMART_3
+      table_1:
+        +table: TABLE_1
+        +grants:
+          select: [SQL_DEVELOPER, SYSADMIN, SA_GOVERN, TABLEAU, ANALYST, FINANCE]
+          references: [SA_GOVERN]
+          all privileges: [SYSADMIN]
+      table_2:
+        +table: TABLE_2
+        +grants:
+          select: [SQL_DEVELOPER, SYSADMIN, SA_GOVERN, TABLEAU, ANALYST, FINANCE]
+          references: [SA_GOVERN]
+          all privileges: [SYSADMIN]
+      table_3:
+        +table: TABLE_3
+        +grants:
+          select: [SQL_DEVELOPER, SYSADMIN, SA_GOVERN, TABLEAU, ANALYST, FINANCE]
+          references: [SA_GOVERN]
+          all privileges: [SYSADMIN]
+    datamart_4:
+      +materialized: table
+      +schema: DATAMART_4
+      tables:
+        +contract:
+          enforced: true
+        +materialized: table
+        +table: FINANCIAL_METRICS_1
+        trunc_load: # This is an example of using a pre-hook to do truncate and load.
+          +materialized: incremental
+          +on_schema_change: append_new_columns
+          +transient: false
+          financial_metrics_1:
+            +meta:
+              contains_pii: true
+              wh_or_dm: Datamart
+            +pre-hook: TRUNCATE TABLE datamart_4.financial_metrics_1
+            +tags: weekly
+    datamart_5:
+      +schema: DATAMART_5
+      ephemeral_models:
+        +materialized: ephemeral
+      views:
+        +materialized: view
+        standard:
+          +meta:
+            wh_or_dm: Datamart
+          view_1:
+            +view: VIEW_1
+            +meta:
+              contains_pii: true
+              tags:
+                DATA_WAREHOUSE.CONTAINS_PII: "TRUE"
+                DATA_WAREHOUSE.DATA_SENSITIVITY: CONFIDENTIAL
+      tables:
+        +contract:
+          enforced: true
+        trunc_load:
+          +transient: false
+        incremental:
+          +transient: false
+          table_1:
+            +table: TABLE_1
+            +materialized: incremental
+            +unique_key: ID
+            +incremental_strategy: merge
+            +on_schema_change: append_new_columns
+            +merge_exclude_columns: ['CREATED_BY', 'CREATED_TIMESTAMP']
+            +meta:
+              contains_pii: true
+              wh_or_dm: Datamart
+            +tags: hourly
+          table_2:
+            +table: TABLE_2
+            +materialized: incremental
+            +unique_key: ID
+            +incremental_strategy: merge
+            +on_schema_change: append_new_columns
+            +merge_exclude_columns: ['CREATED_BY', 'CREATED_TIMESTAMP']
+            +meta:
+              contains_pii: true
+              wh_or_dm: Datamart
+            +tags: hourly
+    datamart_6:
+      +materialized: table
+      +schema: DATAMART_6
+      table_1:
+        +table: TABLE_1
+        +grants:
+          select: [SQL_DEVELOPER, SYSADMIN, SA_GOVERN, TABLEAU]
+          references: [SA_GOVERN]
+          all privileges: [SYSADMIN]
+      table_2:
+        +table: TABLE_2
+        +grants:
+          select: [SQL_DEVELOPER, SYSADMIN, SA_GOVERN, TABLEAU]
+          references: [SA_GOVERN]
+          all privileges: [SYSADMIN]
+    data_warehouse:
+      +schema: DATA_WAREHOUSE
+      ephemeral_models:
+        +materialized: ephemeral
+      tables:
+        +contract:
+          enforced: true
+        incremental:
+          +materialized: incremental
+          +on_schema_change: append_new_columns
+          +incremental_strategy: merge
+          +transient: false
+          table_1:
+            +table: TABLE_1
+            +materialized: table
+            +meta:
+              contains_pii: false
+              wh_or_dm: Warehouse
+    unit_tests:
+      +enabled: false
+      +materialized: table
+      +schema: UNIT_TESTS
+      +transient: true
+      datamarts:
+        unit_test_1:
+          +enabled: "{{ (env_var('DBT_ENV_NAME') != env_var('DBT_ENV_NAME_PROD')) | as_bool }}" # This will allow unit tests to be created in dev and feature branches but not main.
+          +table: UNIT_TEST_1
+seeds:
+  myDBTProject:
+    +enabled: false
+    +quote_columns: false
+    +schema: UNIT_TESTS
+    +transient: true
+    seed_data_1:
+      +enabled: "{{ (env_var('DBT_ENV_NAME') != env_var('DBT_ENV_NAME_PROD')) | as_bool }}"
+      +column_types:
+        column_1: varchar
+        column_2: number(4,0)
+        column_3: number(1,0)
+        column_4: number(36, 2)
+        column_5: number(38, 0)
+        column_6: number(38, 0)
+      +meta:
+        test_type: unit_test
+      +table: SEED_DATA_1
+    seed_data_2:
+      +enabled: "{{ (env_var('DBT_ENV_NAME') != env_var('DBT_ENV_NAME_PROD')) | as_bool }}"
+      +column_types:
+        column_1: number(4,0)
+        column_2: number(1,0)
+        column_3: number(38, 0)
+        column_4: number(36, 2)
+        column_5: number(38, 0)
+        column_6: number(38, 0)
+        column_7: number(38, 0)
+        column_8: number(38, 0)
+      +meta:
+        test_type: unit_test
+      +table: SEED_DATA_2
+tests:
+  +severity: error
+  myDBTProject:
+    enabled: true
+
+# Used to log variables for troubleshooting Keep this commented out until needed.
+#on-run-end:
+#  - "{{ log_variable((env_var('DBT_ENV_NAME') != env_var('DBT_ENV_NAME_PROD')) | as_bool) }}"
