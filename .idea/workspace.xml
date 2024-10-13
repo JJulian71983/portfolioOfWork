@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e98dd2c-ebff-4acf-9182-90d1bccc6808" name="Changes" comment="Python Interpreter change." />
+    <list default="true" id="1e98dd2c-ebff-4acf-9182-90d1bccc6808" name="Changes" comment="Pycharm files.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -101,7 +104,7 @@
       <updated>1728768452449</updated>
       <workItem from="1728768455089" duration="4923000" />
       <workItem from="1728773529436" duration="1635000" />
-      <workItem from="1728780937777" duration="591000" />
+      <workItem from="1728780937777" duration="1893000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit. Added yaml sample 1 file.">
       <option name="closed" value="true" />
@@ -127,7 +130,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728774131297</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Pycharm files.">
+      <option name="closed" value="true" />
+      <created>1728781688531</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1728781688531</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,6 +159,7 @@
     <MESSAGE value="Initial commit. Added yaml sample 1 file." />
     <MESSAGE value="Initial commit of file." />
     <MESSAGE value="Python Interpreter change." />
-    <option name="LAST_COMMIT_MESSAGE" value="Python Interpreter change." />
+    <MESSAGE value="Pycharm files." />
+    <option name="LAST_COMMIT_MESSAGE" value="Pycharm files." />
   </component>
 </project>
