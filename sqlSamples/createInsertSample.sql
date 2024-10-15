@@ -1,3 +1,4 @@
+--This script is for Postgres 17.
 CREATE SCHEMA michael_jordan;
 CREATE TABLE practice_db.michael_jordan.basketball_statistics
 (
