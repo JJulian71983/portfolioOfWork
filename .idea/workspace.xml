@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e98dd2c-ebff-4acf-9182-90d1bccc6808" name="Changes" comment="Added Econ Tobacco Game." />
+    <list default="true" id="1e98dd2c-ebff-4acf-9182-90d1bccc6808" name="Changes" comment="Updated the gitignore.">
+      <change afterPath="$PROJECT_DIR$/skyrim_mods/jeromy_companion_tweaks.esp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/skyrim_mods/jeromy_magic_tweaks.esp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,7 +28,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="streamlitSample1" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -53,22 +57,22 @@
       </list>
     </option>
   </component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/JJulian71983/portfolioOfWork.git",
-    "accountId": "591645f5-12d2-4e18-81e6-b856cc26cc44"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/JJulian71983/portfolioOfWork.git&quot;,
+    &quot;accountId&quot;: &quot;591645f5-12d2-4e18-81e6-b856cc26cc44&quot;
   },
-  "recentNewPullRequestHead": {
-    "server": {
-      "useHttp": false,
-      "host": "github.com",
-      "port": null,
-      "suffix": null
+  &quot;recentNewPullRequestHead&quot;: {
+    &quot;server&quot;: {
+      &quot;useHttp&quot;: false,
+      &quot;host&quot;: &quot;github.com&quot;,
+      &quot;port&quot;: null,
+      &quot;suffix&quot;: null
     },
-    "owner": "JJulian71983",
-    "repository": "portfolioOfWork"
+    &quot;owner&quot;: &quot;JJulian71983&quot;,
+    &quot;repository&quot;: &quot;portfolioOfWork&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -86,14 +90,15 @@
     "Python.randomSelectionOfEvents.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "#5 on streamlitSample1",
-    "last_opened_file_path": "C:/Anaconda/Scripts/conda.exe",
+    "git-widget-placeholder": "jeromy1",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/jerom/PycharmProjects/portfolioOfWork/skyrim_mods",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -151,7 +156,8 @@
       <updated>1728768452449</updated>
       <workItem from="1728768455089" duration="4923000" />
       <workItem from="1728773529436" duration="1635000" />
-      <workItem from="1728780937777" duration="7478000" />
+      <workItem from="1728780937777" duration="8886000" />
+      <workItem from="1728959579871" duration="777000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit. Added yaml sample 1 file.">
       <option name="closed" value="true" />
@@ -209,7 +215,23 @@
       <option name="project" value="LOCAL" />
       <updated>1728788363940</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added new directory and renamed some stuff.">
+      <option name="closed" value="true" />
+      <created>1728789413644</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1728789413644</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Updated the gitignore.">
+      <option name="closed" value="true" />
+      <created>1728959933320</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1728959933320</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,7 +256,9 @@
     <MESSAGE value="Started a json example." />
     <MESSAGE value="Added tip your server game." />
     <MESSAGE value="Added Econ Tobacco Game." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Econ Tobacco Game." />
+    <MESSAGE value="Added new directory and renamed some stuff." />
+    <MESSAGE value="Updated the gitignore." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated the gitignore." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/portfolioOfWork$randomSelectionOfEvents.coverage" NAME="randomSelectionOfEvents Coverage Results" MODIFIED="1728784005130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tipYourServer" />
