@@ -4,17 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e98dd2c-ebff-4acf-9182-90d1bccc6808" name="Changes" comment="Updated the gitignore.">
-      <change afterPath="$PROJECT_DIR$/sqlSamples/insertSelectSample.sql" afterDir="false" />
+    <list default="true" id="1e98dd2c-ebff-4acf-9182-90d1bccc6808" name="Changes" comment="Added fallout 4 mod and a sample of table create and inserting.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fallout4_mods/jeromy_patch_and_enhancements.esp" beforeDir="false" afterPath="$PROJECT_DIR$/fallout4Mods/jeromy_patch_and_enhancements.esp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileFormatSample/jsonSample1.json" beforeDir="false" afterPath="$PROJECT_DIR$/fileFormatSamples/jsonSample1.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileFormatSample/xmlSample1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/fileFormatSamples/xmlSample1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileFormatSample/yamlSample1.yml" beforeDir="false" afterPath="$PROJECT_DIR$/fileFormatSamples/yamlSample1.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skyrim_mods/jeromy_companion_tweaks.esp" beforeDir="false" afterPath="$PROJECT_DIR$/skyrimMods/jeromy_companion_tweaks.esp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skyrim_mods/jeromy_magic_tweaks.esp" beforeDir="false" afterPath="$PROJECT_DIR$/skyrimMods/jeromy_magic_tweaks.esp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skyrim_mods/jeromy_mod_patch.esp" beforeDir="false" afterPath="$PROJECT_DIR$/skyrimMods/jeromy_mod_patch.esp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tipYourServer/randomSelectionOfEvents.py" beforeDir="false" afterPath="$PROJECT_DIR$/tipYourServerApp/randomSelectionOfEvents.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +88,7 @@
     "Python.randomSelectionOfEvents.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "directoryFix",
+    "git-widget-placeholder": "#8 on directoryFix",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Program Files/PostgreSQL/17/pg_env.bat",
     "node.js.detected.package.eslint": "true",
@@ -121,7 +112,12 @@
       <recent name="C:\Users\jerom\PycharmProjects\portfolioOfWork\file_format_examples" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Database Script.createInsertSample.sql">
+    <configuration name="createInsertSample.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/sqlSamples/createInsertSample.sql" />
+      <script-mode>FILE</script-mode>
+      <method v="2" />
+    </configuration>
     <configuration name="randomSelectionOfEvents" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="portfolioOfWork" />
       <option name="ENV_FILES" value="" />
@@ -147,6 +143,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Database Script.createInsertSample.sql" />
         <item itemvalue="Python.randomSelectionOfEvents" />
       </list>
     </recent_temporary>
@@ -244,7 +241,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728959933320</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added fallout 4 mod and a sample of table create and inserting.">
+      <option name="closed" value="true" />
+      <created>1728968079721</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1728968079721</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -271,7 +276,8 @@
     <MESSAGE value="Added Econ Tobacco Game." />
     <MESSAGE value="Added new directory and renamed some stuff." />
     <MESSAGE value="Updated the gitignore." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated the gitignore." />
+    <MESSAGE value="Added fallout 4 mod and a sample of table create and inserting." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added fallout 4 mod and a sample of table create and inserting." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/portfolioOfWork$randomSelectionOfEvents.coverage" NAME="randomSelectionOfEvents Coverage Results" MODIFIED="1728784005130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tipYourServer" />
