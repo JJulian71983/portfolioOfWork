@@ -1,0 +1,750 @@
+version: 2
+
+models:
+  - name: opportunity
+    columns:
+    - name: ACCOUNT_ID
+      data_type: VARCHAR(18)
+      constraints:
+        - type: not_null
+      data_tests:
+        - not_null:
+            config:
+              tags: test_hourly
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - Account
+        contains_pii: false
+        subject_area: Sales
+    - name: ACCOUNT_NM
+      data_type: VARCHAR
+      constraints:
+        - type: not_null
+      data_tests:
+        - not_null:
+            config:
+              tags: test_hourly
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - Account
+        contains_pii: true
+        subject_area: Sales
+    - name: ACTIVE_PILOT_UNITS_NR
+      data_type: NUMBER(38,0)
+      meta:
+        sources:
+          - DataOps
+        objects:
+          - Implementation_Unit
+        contains_pii: false
+        subject_area: Sales
+    - name: AE_FORECAST_CATEGORY_NM
+      data_type: VARCHAR
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - Opportunity
+        contains_pii: false
+        subject_area: Sales
+      data_tests:
+        - accepted_values:
+            values: ["Early Stage", "Best Case", "Commit", "Closed", "Omitted"]
+            config:
+                tags: test_hourly
+    - name: ARR_AMT
+      data_type: NUMBER(36,2)
+      constraints:
+        - type: not_null
+      data_tests:
+        - not_null:
+            config:
+              tags: test_hourly
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - Opportunity
+        contains_pii: false
+        subject_area: Sales
+    - name: BDR_OWNER_ID
+      data_type: VARCHAR(18)
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - Opportunity
+        contains_pii: false
+        subject_area: Sales
+    - name: BDR_OWNER_NM
+      data_type: VARCHAR
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - User
+        contains_pii: true
+        subject_area: Sales
+    - name: CALCULATED_MANAGER_EMAIL_ADDRESS_TXT
+      data_type: VARCHAR
+      description: This value is derived from a user-defined function that determines the calculated owner id.
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - User
+        contains_pii: true
+        subject_area: Sales
+    - name: CALCULATED_MANAGER_ID
+      data_type: VARCHAR(18)
+      description: This value is derived from a user-defined function that determines the calculated owner id.
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - User
+        contains_pii: false
+        subject_area: Sales
+    - name: CALCULATED_MANAGER_NM
+      data_type: VARCHAR
+      description: This value is derived from a user-defined function that determines the calculated owner id.
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - User
+        contains_pii: true
+        subject_area: Sales
+    - name: CALCULATED_OWNER_EMAIL_ADDRESS_TXT
+      data_type: VARCHAR
+      description: This value is derived from a user-defined function that determines the calculated owner id.
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - User
+        contains_pii: true
+        subject_area: Sales
+    - name: CALCULATED_OWNER_ID
+      data_type: VARCHAR(18)
+      meta:
+        sources:
+          - Snowflake
+        objects:
+          - Calculated_owner_function
+        contains_pii: false
+        subject_area: Sales
+    - name: CALCULATED_OWNER_NM
+      data_type: VARCHAR
+      description: This value is derived from a user-defined function that determines the calculated owner id.
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - User
+        contains_pii: true
+        subject_area: Sales
+    - name: CAMPAIGN_TYPE_NM
+      data_type: VARCHAR
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - Campaign
+        contains_pii: false
+        subject_area: Sales
+    - name: CHANGE_COUNT_QTR
+      data_type: ARRAY
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - Opportunity
+        contains_pii: false
+        subject_area: Sales
+    - name: CHANNEL_MANAGER_ID
+      data_type: VARCHAR(18)
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - Opportunity
+        contains_pii: false
+        subject_area: Sales
+    - name: CHANNEL_MANAGER_NM
+      data_type: VARCHAR
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - User
+        contains_pii: true
+        subject_area: Sales
+    - name: CLOSE_QUARTER_DT
+      data_type: DATE
+      constraints:
+        - type: not_null
+      data_tests:
+        - not_null:
+            config:
+              tags: test_hourly
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - Opportunity
+        contains_pii: false
+        subject_area: Sales
+    - name: CLOSE_DT
+      data_type: DATE
+      constraints:
+        - type: not_null
+      data_tests:
+        - not_null:
+            config:
+              tags: test_hourly
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - Opportunity
+        contains_pii: false
+        subject_area: Sales
+    - name: CLOSE_DATE_CHANGE_CNT
+      data_type: NUMBER(4,0)
+      constraints:
+        - type: not_null
+      data_tests:
+        - not_null:
+            config:
+              tags: test_hourly
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - Opportunity
+        contains_pii: false
+        subject_area: Sales
+    - name: CLOSE_DATE_PUSH_CNT
+      data_type: NUMBER(4,0)
+      constraints:
+        - type: not_null
+      data_tests:
+        - not_null:
+            config:
+              tags: test_hourly
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - Opportunity
+        contains_pii: false
+        subject_area: Sales
+    - name: CONTACT_CREATED_DT
+      data_type: DATE
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - Opportunity
+        contains_pii: false
+        subject_area: Sales
+    - name: CREATED_QUARTER_DT
+      data_type: DATE
+      constraints:
+        - type: not_null
+      data_tests:
+        - not_null:
+            config:
+              tags: test_hourly
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - Opportunity
+        contains_pii: false
+        subject_area: Sales
+    - name: CSM_ID
+      data_type: varchar(18)
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - Opportunity
+        contains_pii: false
+        subject_area: Sales
+    - name: csm_nm
+      data_type: varchar
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - User
+        contains_pii: true
+        subject_area: Sales
+    - name: FORECAST_CATEGORY_NM
+      data_type: VARCHAR
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - Opportunity
+        contains_pii: false
+        subject_area: Sales
+      data_tests:
+        - accepted_values:
+            values: ["Early Stage", "Best Case", "Commit", "Closed", "Omitted"]
+            config:
+                tags: test_hourly
+    - name: FORECAST_CATEGORY_NM_2
+      data_type: VARCHAR
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - Opportunity
+        contains_pii: false
+        subject_area: Sales
+      data_tests:
+        - accepted_values:
+            values: ["Pipeline", "Best Case", "Forecast", "Closed", "Omitted"]
+            config:
+                tags: test_hourly
+    - name: OPPT_CLOSED_IND
+      data_type: BOOLEAN
+      constraints:
+        - type: not_null
+      data_tests:
+        - not_null:
+            config:
+              tags: test_hourly
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - Opportunity
+        contains_pii: false
+        subject_area: Sales
+    - name: INITIAL_PROGRESSION_DT
+      data_type: DATE
+      description: This is a coalesce of the stage entered date columns.
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - Opportunity
+        contains_pii: false
+        subject_area: Sales
+    - name: INDUSTRY_SECTOR_NM
+      data_type: VARCHAR
+      description: Sector the account is a part of in Salesforce
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - Account
+        contains_pii: false
+        subject_area: Sales
+    - name: MANAGER_FORECAST_CATEGORY_NM
+      data_type: VARCHAR
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - Opportunity
+        contains_pii: false
+        subject_area: Sales
+      data_tests:
+        - accepted_values:
+            values: ["Early Stage", "Best Case", "Commit", "Closed", "Omitted"]
+            config:
+                tags: test_hourly
+    - name: NEW_OPPT_IND
+      data_type: BOOLEAN
+      constraints:
+        - type: not_null
+      data_tests:
+        - not_null:
+            config:
+              tags: test_hourly
+      meta:
+        sources:
+          - Snowflake
+        objects:
+          - Opportunity
+        contains_pii: false
+        subject_area: Sales
+    - name: NEW_LOGO_IND
+      data_type: BOOLEAN
+      constraints:
+        - type: not_null
+      data_tests:
+        - not_null:
+            config:
+              tags: test_hourly
+      meta:
+        sources:
+          - Snowflake
+        objects:
+          - Opportunity
+        contains_pii: false
+        subject_area: Sales
+    - name: PILOT_IND
+      data_type: BOOLEAN
+      constraints:
+        - type: not_null
+      data_tests:
+        - not_null:
+            config:
+              tags: test_hourly
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - Opportunity
+        contains_pii: false
+        subject_area: Sales
+    - name: OPPT_WON_IND
+      data_type: BOOLEAN
+      constraints:
+        - type: not_null
+      data_tests:
+        - not_null:
+            config:
+              tags: test_hourly
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - Opportunity
+        contains_pii: false
+        subject_area: Sales
+    - name: LEAD_CATEGORY_NM
+      data_type: VARCHAR
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - Lead
+        contains_pii: false
+        subject_area: Sales
+    - name: LEAD_CREATED_DT
+      data_type: DATE
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - Lead
+        contains_pii: false
+        subject_area: Sales
+    - name: LEAD_ID
+      data_type: VARCHAR(18)
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - Opportunity
+        contains_pii: false
+        subject_area: Sales
+    - name: LEAD_SOURCE_NM
+      data_type: VARCHAR
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - Lead
+        contains_pii: false
+        subject_area: Sales
+    - name: UNITS_CNT
+      data_type: NUMBER(38,0)
+      constraints:
+        - type: not_null
+      data_tests:
+        - not_null:
+            config:
+              tags: test_hourly
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - Opportunity
+        contains_pii: false
+        subject_area: Sales
+    - name: OPPT_CREATED_DT
+      data_type: DATE
+      constraints:
+        - type: not_null
+      data_tests:
+        - not_null:
+            config:
+              tags: test_hourly
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - Opportunity
+        contains_pii: false
+        subject_area: Sales
+    - name: OPPT_NM
+      data_type: VARCHAR
+      constraints:
+        - type: not_null
+      data_tests:
+        - not_null:
+            config:
+              tags: test_hourly
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - Opportunity
+        contains_pii: true
+        subject_area: Sales
+    - name: OPPT_OWNER_MANAGER_NM
+      data_type: VARCHAR
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - User
+        contains_pii: true
+        subject_area: Sales
+    - name: OPPT_OWNER_ID
+      data_type: VARCHAR(18)
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - Opportunity
+        contains_pii: false
+        subject_area: Sales
+    - name: OPPT_OWNER_NM
+      data_type: VARCHAR
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - User
+        contains_pii: true
+        subject_area: Sales
+    - name: PILOT_ID
+      data_type:  VARCHAR(18)
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - Opportunity
+        contains_pii: false
+        subject_area: Sales
+    - name: QUOTA_RETIREMENT_AMT
+      data_type: NUMBER(36,2)
+      constraints:
+        - type: not_null
+      data_tests:
+        - not_null:
+            config:
+              tags: test_hourly
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - Opportunity
+        contains_pii: false
+        subject_area: Sales
+    - name: RECORD_TYPE_ID
+      data_type: VARCHAR(18)
+      constraints:
+        - type: not_null
+      data_tests:
+        - not_null:
+            config:
+              tags: test_hourly
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - Opportunity
+        contains_pii: false
+        subject_area: Sales
+    - name: RECORD_TYPE_NM
+      data_type: VARCHAR
+      constraints:
+        - type: not_null
+      data_tests:
+        - not_null:
+            config:
+              tags: test_hourly
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - Record_Type
+        contains_pii: false
+        subject_area: Sales
+    - name: SALES_SEGMENT_NM
+      data_type: VARCHAR
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - Account
+        contains_pii: false
+        subject_area: Sales
+    - name: SALESFORCE_CAMPAIGN_ID
+      data_type: VARCHAR(18)
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - Campaign
+        contains_pii: false
+        subject_area: Sales
+    - name: SALESFORCE_CAMPAIGN_NM
+      data_type: VARCHAR
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - Campaign
+        contains_pii: false
+        subject_area: Sales
+    - name: OPPT_ID
+      data_type: VARCHAR(18)
+      constraints:
+        - type: primary_key
+        - type: unique
+      data_tests:
+        - not_null:
+            config:
+              tags: test_hourly
+        - unique:
+            config:
+              tags: test_hourly
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - Opportunity
+        contains_pii: false
+        subject_area: Sales
+    - name: OPPT_TYPE_NM
+      data_type: VARCHAR
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - Record_Type
+        contains_pii: false
+        subject_area: Sales
+    - name: SOURCE_NM
+      data_type: VARCHAR
+      constraints:
+        - type: not_null
+      data_tests:
+        - not_null:
+            config:
+              tags: test_hourly
+      meta:
+        sources:
+          - Snowflake
+        objects:
+          - Static
+        contains_pii: false
+        subject_area: Sales
+    - name: STAGE_NM
+      data_type: VARCHAR
+      constraints:
+        - type: not_null
+      data_tests:
+        - not_null:
+            config:
+              tags: test_hourly
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - Opportunity
+        contains_pii: false
+        subject_area: Sales
+    - name: SUB_VERTICAL_NM
+      data_type: VARCHAR
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - Account
+        contains_pii: false
+        subject_area: Sales
+    - name: VERTICAL_NM
+      data_type: VARCHAR
+      meta:
+        sources:
+          - Salesforce
+        objects:
+          - Account
+        contains_pii: false
+        subject_area: Sales
+    - name: RECORD_CREATED_BY_NM
+      data_type: VARCHAR
+      constraints:
+        - type: not_null
+      data_tests:
+        - not_null:
+            config:
+              tags: test_hourly
+      meta:
+        sources:
+          - DataOps
+        objects:
+          - Static
+        contains_pii: false
+        subject_area: Audit
+    - name: RECORD_CREATED_TS
+      data_type: TIMESTAMP_TZ
+      constraints:
+        - type: not_null
+      data_tests:
+        - not_null:
+            config:
+              tags: test_hourly
+      meta:
+        sources:
+          - Snowflake
+        objects:
+          - CONVERT_TIMEZONE('UTC', CURRENT_TIMESTAMP()) Function
+        contains_pii: false
+        subject_area: Audit
+    - name: RECORD_MODIFIED_BY_NM
+      data_type: VARCHAR
+      constraints:
+        - type: not_null
+      data_tests:
+        - not_null:
+            config:
+              tags: test_hourly
+      meta:
+        sources:
+          - DataOps
+        objects:
+          - Static
+        contains_pii: false
+        subject_area: Audit
+    - name: RECORD_MODIFIED_TS
+      data_type: TIMESTAMP_TZ
+      constraints:
+        - type: not_null
+      data_tests:
+        - not_null:
+            config:
+              tags: test_hourly
+      meta:
+        sources:
+          - Snowflake
+        objects:
+          - CONVERT_TIMEZONE('UTC', CURRENT_TIMESTAMP()) Function
+        contains_pii: false
+        subject_area: Audit

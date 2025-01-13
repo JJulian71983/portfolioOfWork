@@ -1,0 +1,131 @@
+version: 2
+
+models:
+  - name: salesforce_order_product
+    alias: SALESFORCE_ORDER_PRODUCT
+    columns:
+      - name: UID
+        data_type: VARCHAR
+        constraints:
+          - type: primary_key
+        data_tests:
+          - not_null:
+              config:
+                tags: test_hourly
+          - unique:
+              config:
+                tags: test_hourly
+      - name: NEEDS_BACKFILL_IND
+        data_type: BOOLEAN
+        data_tests:
+          - not_null:
+              config:
+                tags: test_hourly
+          - accepted_values:
+              values: [TRUE, FALSE]
+              config:
+                tags: test_hourly
+      - name: BILLABLE_CLIENT_NM
+        data_type: VARCHAR
+      - name: BILLABLE_CLIENT_UUID
+        data_type: VARCHAR
+        data_tests:
+          - relationships:
+              to: source('landing_salesforce', 'ACCOUNT')
+              field: LVT_CUSTOMER_ID_C
+              config:
+                tags: test_after_mate
+      - name: CLOSE_DT
+        data_type: DATE
+      - name: ORDER_ID
+        data_type: VARCHAR
+        data_tests:
+          - not_null:
+              config:
+                tags: test_hourly
+          - relationships:
+              to: source('landing_salesforce', '"ORDER"')
+              field: ID
+              config:
+                tags: test_after_mate
+      - name: OPPORTUNITY_ID
+        data_type: VARCHAR
+        data_tests:
+          - relationships:
+              to: source('landing_salesforce', 'OPPORTUNITY')
+              field: ID
+              config:
+                tags: test_after_mate
+      - name: SHIPPING_ACCOUNT_NM
+        data_type: VARCHAR
+      - name: SHIPPING_ACCOUNT_ADDRESS_NM
+        data_type: VARCHAR
+      - name: ORDER_ACTIVATED_TS
+        data_type: TIMESTAMP_TZ
+      - name: CSM_NM
+        data_type: VARCHAR
+      - name: CONTRACT_START_DT
+        data_type: DATE
+      - name: CONTRACT_END_DT
+        data_type: DATE
+      - name: SKU_ID
+        data_type: NUMBER(38, 0)
+      - name: PRODUCT_NM
+        data_type: VARCHAR
+      - name: PRODUCT_ID
+        data_type: VARCHAR
+        data_tests:
+          - relationships:
+              to: source('landing_salesforce', 'ORDER_ITEM')
+              field: ID
+              config:
+                tags: test_after_mate
+      - name: SUBSCRIPTION_START_DT
+        data_type: DATE
+      - name: SUBSCRIPTION_END_DT
+        data_type: DATE
+      - name: QUANTITY_CNT
+        data_type: NUMBER(38, 0)
+      - name: UNIT_PRICE_AMT
+        data_type: NUMBER(36, 2)
+      - name: MONTHLY_PER_UNIT_PRICE_AMT
+        data_type: NUMBER(36, 2)
+      - name: VMS_TRUE_UP_DT
+        data_type: DATE
+        meta:
+          sources:
+            - Salesforce
+          objects:
+            - Order
+          contains_pii: false
+          subject_area: Sales
+      - name: RECORD_CREATED_BY_NM
+        data_type: VARCHAR
+        constraints:
+          - type: not_null
+        data_tests:
+          - not_null:
+              config:
+                tags: test_hourly
+        meta:
+          sources:
+            - DataOps
+          objects:
+            - Static
+          contains_pii: false
+          subject_area: Audit
+      - name: RECORD_CREATED_TS
+        data_type: TIMESTAMP_TZ
+        constraints:
+          - type: not_null
+        data_tests:
+          - not_null:
+              config:
+                tags: test_hourly
+        meta:
+          sources:
+            - Snowflake
+          objects:
+            - CONVERT_TIMEZONE('UTC', CURRENT_TIMESTAMP()) Function
+          contains_pii: false
+          subject_area: Audit
