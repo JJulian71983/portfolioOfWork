@@ -1,0 +1,95 @@
+version: 2
+models:
+  - name: marketing_spend
+    description: Aggregates marketing spend data from various advertising platforms into a single source of truth
+    data_tests:
+      - dbt_utils.equal_rowcount:
+          compare_model: "{{ source('staging_linkedin_ads', 'AD_ANALYTICS_BY_CAMPAIGN') }}"
+          config:
+            where: SOURCE_NM = 'LinkedIn'
+            tags: test_after_mate
+      - dbt_utils.equal_rowcount:
+          compare_model: "{{ source('staging_facebook_ads', 'BASIC_CAMPAIGN') }}"
+          config:
+            where: SOURCE_NM = 'Facebook'
+            tags: test_after_mate
+    columns:
+      - name: MRKT_SPEND_UID
+        description: Unique identifier for the marketing spend record, generated as a surrogate key
+        data_type: VARCHAR
+        constraints:
+          - type: primary_key
+        data_tests:
+          - not_null:
+              config:
+                tags: test_hourly
+          - unique:
+              config:
+                tags: test_hourly
+      - name: COST_DT
+        description: Date of the marketing spend
+        data_type: DATE
+        data_tests:
+          - not_null:
+              config:
+                tags: test_hourly
+      - name: SOURCE_CAMPAIGN_ID
+        description: Original campaign identifier from the source platform
+        data_type: NUMBER(38, 0)
+        data_tests:
+          - not_null:
+              config:
+                tags: test_hourly
+          - dbt_utils.not_empty_string:
+              trim_whitespace: true
+              config:
+                tags: test_hourly
+      - name: SOURCE_CAMPAIGN_NM
+        description: Name of the marketing campaign
+        data_type: VARCHAR
+        data_tests:
+          - not_null:
+              config:
+                tags: test_hourly
+          - dbt_utils.not_empty_string:
+              trim_whitespace: true
+              config:
+                tags: test_hourly
+      - name: SOURCE_NM
+        description: Sub-channel or medium of the marketing campaign
+        data_type: VARCHAR
+        data_tests:
+          - not_null:
+              config:
+                tags: test_hourly
+          - dbt_utils.not_empty_string:
+              trim_whitespace: true
+              config:
+                tags: test_hourly
+          - accepted_values:
+              values: ['Facebook', 'Google', 'LinkedIn']
+      - name: COST_AMT
+        description: Amount spent on marketing for the given date and campaign
+        data_type: NUMBER(36, 2)
+        data_tests:
+          - not_null:
+              config:
+                tags: test_hourly
+      - name: RECORD_CREATED_BY_NM
+        description: Name of the user or system that created the record, defaulted to 'DataOps'
+        data_type: VARCHAR
+        data_tests:
+          - not_null:
+              config:
+                tags: test_hourly
+          - dbt_utils.not_empty_string:
+              trim_whitespace: true
+              config:
+                tags: test_hourly
+      - name: RECORD_CREATED_TS
+        description: Timestamp when the record was created, including the time of data processing
+        data_type: TIMESTAMP_TZ
+        data_tests:
+          - not_null:
+              config:
+                tags: test_hourly
