@@ -1,3 +1,4 @@
+--This test allows you to count and compare rows from two models or sources with the ability to filter both.--
 {% test equal_row_count_with_conditions(model, column_name, compare_model, compare_column_name, condition_sql="1=1", compare_condition_sql="1=1") %}
 
     WITH model_count AS (
