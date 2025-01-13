@@ -5,20 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e98dd2c-ebff-4acf-9182-90d1bccc6808" name="Changes" comment="Added comment">
-      <change afterPath="$PROJECT_DIR$/fileFormatSamples/dbtPropertySamples/marktProp.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fileFormatSamples/dbtPropertySamples/optPropert.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fileFormatSamples/dbtPropertySamples/ordProduct.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sqlSamples/changeCountQtr.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sqlSamples/csmMeetings.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sqlSamples/leadProg.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sqlSamples/leadProgressDetails.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sqlSamples/logoList.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sqlSamples/marketingData.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sqlSamples/opptPushCnt.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sqlSamples/ops.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sqlSamples/orderProduct.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sqlSamples/unitInfo.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pythonSamples/swgohAIBotBuild.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +86,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "addSqlSamples",
+    "git-widget-placeholder": "unitTestSamples",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Program Files/PostgreSQL/17/pg_env.bat",
     "node.js.detected.package.eslint": "true",
@@ -119,6 +106,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jerom\PycharmProjects\portfolioOfWork\pythonSamples" />
       <recent name="C:\Users\jerom\PycharmProjects\portfolioOfWork\dataApps" />
       <recent name="C:\Users\jerom\PycharmProjects\portfolioOfWork\file_format_examples" />
     </key>
